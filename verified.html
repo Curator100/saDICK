@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verified Tutor — Sadek Sir Tuition Media</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Hind+Siliguri:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8CC7A;
+      --gold-dim: #8a6e2f;
+      --bg: #0A0A0F;
+      --bg2: #111118;
+      --bg3: #181820;
+      --text: #F0EDE6;
+      --text-muted: #9e9a90;
+      --border: rgba(201,168,76,0.18);
+      --radius: 14px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Hind Siliguri', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px 50px;
+      position: relative;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 50% 0%, rgba(201,168,76,0.13) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 30% at 80% 80%, rgba(201,168,76,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-ornament {
+      width: 60px; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 0 auto 28px;
+      animation: fadeIn 1s ease both;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 7vw, 3.8rem);
+      font-weight: 900;
+      letter-spacing: 0.01em;
+      line-height: 1.15;
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-dim) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: fadeUp 0.9s ease both;
+      max-width: 700px;
+    }
+
+    .hero-sub {
+      margin-top: 16px;
+      font-size: clamp(1rem, 3.5vw, 1.25rem);
+      font-weight: 400;
+      color: var(--text-muted);
+      letter-spacing: 0.03em;
+      animation: fadeUp 1s 0.15s ease both;
+    }
+
+    .hero-divider {
+      width: 48px; height: 1.5px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 28px auto;
+      animation: fadeIn 1s 0.25s ease both;
+    }
+
+    /* ─── NOTICE BOX ─── */
+    .notice-box {
+      background: rgba(201,168,76,0.08);
+      border: 1.5px solid rgba(201,168,76,0.35);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      max-width: 480px;
+      margin: 0 auto;
+      animation: fadeUp 1s 0.35s ease both;
+    }
+
+    .notice-line1 {
+      font-size: clamp(1rem, 3.5vw, 1.15rem);
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .notice-line2 {
+      margin-top: 10px;
+      font-size: clamp(1.05rem, 4vw, 1.25rem);
+      font-weight: 700;
+      color: var(--gold-light);
+      animation: pulse 2.2s ease-in-out infinite;
+      text-shadow: 0 0 16px rgba(232,204,122,0.3);
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.65; }
+    }
+
+    /* ─── SECTION ─── */
+    .section { padding: 60px 20px; }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 5vw, 2rem);
+      font-weight: 700;
+      text-align: center;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+
+    .section-line {
+      width: 44px; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 0 auto 36px;
+    }
+
+    /* ─── VIDEO SINGLE ─── */
+    .video-wrap { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+    .video-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .video-label {
+      padding: 10px 16px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid var(--border);
+    }
+
+    video {
+      display: block;
+      width: 100%;
+      background: #000;
+      max-height: 380px;
+    }
+
+    /* ─── PAYMENT BOX ─── */
+    .payment-wrap {
+      background: var(--bg);
+      padding: 56px 20px;
+    }
+
+    .payment-card {
+      max-width: 520px;
+      margin: 0 auto;
+      background: var(--bg3);
+      border: 1.5px solid rgba(201,168,76,0.3);
+      border-radius: 18px;
+      padding: 28px 24px;
+      text-align: center;
+    }
+
+    .payment-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--gold-light);
+      margin-bottom: 6px;
+    }
+
+    .payment-desc {
+      font-size: 0.97rem;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .payment-desc strong { color: var(--gold-light); }
+
+    .payment-numbers {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 6px;
+    }
+
+    .payment-num-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 20px;
+      min-width: 180px;
+      flex: 1;
+    }
+
+    .pn-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .pn-value {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* ─── FORM ─── */
+    .form-section {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 56px 20px;
+    }
+
+    .form-container {
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .form-step {
+      display: none;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .form-step.active { display: flex; }
+
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 30px;
+      padding: 5px 14px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .form-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+    }
+
+    .form-input {
+      background: var(--bg3);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 13px 16px;
+      font-family: 'Hind Siliguri', sans-serif;
+      font-size: 0.97rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      width: 100%;
+      -webkit-appearance: none;
+    }
+
+    .form-input::placeholder { color: var(--text-muted); opacity: 0.6; }
+
+    .form-input:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
+    }
+
+    .submit-btn {
+      margin-top: 6px;
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dim) 100%);
+      color: #0A0A0F;
+      border: none;
+      border-radius: var(--radius);
+      font-family: 'Hind Siliguri', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: transform 0.18s, box-shadow 0.18s, opacity 0.18s;
+      box-shadow: 0 4px 20px rgba(201,168,76,0.28);
+    }
+
+    .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,168,76,0.4); }
+    .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+    .spinner {
+      width: 18px; height: 18px;
+      border: 2.5px solid rgba(0,0,0,0.2);
+      border-top-color: #0A0A0F;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      display: inline-block;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Final success */
+    .form-final {
+      display: none;
+      text-align: center;
+      padding: 30px 10px;
+    }
+
+    .final-icon {
+      width: 70px; height: 70px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dim));
+      color: #0A0A0F;
+      border-radius: 50%;
+      font-size: 2.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-weight: 900;
+    }
+
+    .final-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      color: var(--gold-light);
+      margin-bottom: 12px;
+    }
+
+    .final-msg {
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.8;
+      max-width: 380px;
+      margin: 0 auto;
+    }
+
+    .final-msg strong { color: var(--gold-light); }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--bg3);
+      border: 1.5px solid var(--gold);
+      color: var(--text);
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-align: center;
+      max-width: 88vw;
+      z-index: 9999;
+      opacity: 0;
+      transition: opacity 0.3s, transform 0.3s;
+      pointer-events: none;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .toast.warning { border-color: #e07b39; color: #f5a668; }
+
+    /* ─── TERMS ─── */
+    .terms-wrap {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .terms-container {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .term-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .term-item:hover {
+      border-color: var(--gold-dim);
+      box-shadow: 0 4px 20px rgba(201,168,76,0.08);
+    }
+
+    .term-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--gold);
+      min-width: 36px;
+      line-height: 1.3;
+      flex-shrink: 0;
+    }
+
+    .term-text {
+      font-size: 0.97rem;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .term-text strong { color: var(--gold-light); font-weight: 600; }
+
+    /* ─── SLIDESHOW ─── */
+    .slideshow-wrap {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .slideshow-container {
+      max-width: 640px;
+      margin: 0 auto;
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+      cursor: pointer;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+    }
+
+    .slide.active {
+      display: block;
+      animation: slideIn 0.5s ease;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: scale(1.02); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    .slide-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.35);
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    .slideshow-container.paused .slide-overlay { opacity: 1; }
+
+    .pause-icon {
+      font-size: 2.8rem;
+      color: rgba(255,255,255,0.85);
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+
+    .slide-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--bg3);
+      border: 1.5px solid var(--gold-dim);
+      transition: background 0.3s, transform 0.3s;
+      cursor: pointer;
+    }
+
+    .dot.active { background: var(--gold); transform: scale(1.25); }
+
+    .slide-hint {
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 12px;
+      opacity: 0.7;
+    }
+
+    /* ─── VIDEOS (bottom) ─── */
+    .videos-bottom { background: var(--bg); }
+
+    .video-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .video-card-list {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 48px 20px 36px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 24px;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px 40px;
+      margin-bottom: 28px;
+    }
+
+    .footer-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .footer-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .footer-value {
+      font-size: 1rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .footer-address {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      max-width: 280px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      opacity: 0.5;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @media (max-width: 480px) {
+      .hero { padding: 50px 16px 44px; }
+      .section { padding: 48px 16px; }
+      .payment-wrap, .form-section, .videos-bottom { padding-left: 16px; padding-right: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- ════════ HERO ════════ -->
+<section class="hero">
+  <div class="hero-ornament"></div>
+  <h1 class="hero-title">Sadek Sir<br>Tuition Media</h1>
+  <p class="hero-sub">বিশ্বস্ত টিউশনারের একমাত্র মিডিয়া</p>
+  <div class="hero-divider"></div>
+
+  <div class="notice-box">
+    <p class="notice-line1">আমরা শুধুমাত্র <strong style="color:var(--gold-light)">Verified Tutor</strong>-দের টিউশন দিয়ে থাকি।<br>Verification সম্পর্কে জানতে —</p>
+    <p class="notice-line2">👇 নিচের ভিডিওটি দেখুন</p>
+  </div>
+</section>
+
+<!-- ════════ INTRO VIDEO (5.mp4) ════════ -->
+<section class="section video-wrap">
+  <div class="video-card">
+    <div class="video-label">Verification — কীভাবে হয়?</div>
+    <video id="vIntro" src="5.mp4" controls preload="metadata" playsinline></video>
+  </div>
+</section>
+
+<!-- ════════ PAYMENT INFO ════════ -->
+<section class="payment-wrap">
+  <div class="payment-card">
+    <h2 class="payment-title">Verification করতে</h2>
+    <p class="payment-desc">
+      নিচের যেকোনো একটি নম্বরে <strong>৳২০০ Registration Fee</strong> পরিশোধ করুন,<br>
+      তারপর নিচের ফর্মটি পূরণ করুন।
+    </p>
+    <div class="payment-numbers">
+      <div class="payment-num-card">
+        <div class="pn-label">bKash</div>
+        <div class="pn-value">01633410212</div>
+      </div>
+      <div class="payment-num-card">
+        <div class="pn-label">Nagad</div>
+        <div class="pn-value">01846156788</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ REGISTRATION FORM ════════ -->
+<section class="form-section" id="formSection">
+  <h2 class="section-title">Verification Form</h2>
+  <div class="section-line"></div>
+
+  <div class="form-container">
+
+    <!-- STEP 1: Payment verification -->
+    <div class="form-step active" id="step1">
+      <div class="step-badge">ধাপ ১ — Payment যাচাই</div>
+
+      <div class="form-group">
+        <label class="form-label">নাম *</label>
+        <input class="form-input" id="s1-name" type="text" placeholder="আপনার পুরো নাম" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">নম্বর (WhatsApp) *</label>
+        <input class="form-input" id="s1-phone" type="tel" placeholder="01XXXXXXXXX" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Transaction ID *</label>
+        <input class="form-input" id="s1-txn" type="text" placeholder="Payment-এর Transaction ID" />
+      </div>
+
+      <button class="submit-btn" id="btn1" onclick="submitStep1()">
+        <span id="btn1Text">পরবর্তী ধাপ →</span>
+        <span id="btn1Spinner" class="spinner" style="display:none"></span>
+      </button>
+    </div>
+
+    <!-- STEP 2: Full profile -->
+    <div class="form-step" id="step2">
+      <div class="step-badge">ধাপ ২ — আপনার তথ্য</div>
+
+      <div class="form-group">
+        <label class="form-label">নাম</label>
+        <input class="form-input" id="s2-name" type="text" placeholder="পুরো নাম" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">স্কুল</label>
+        <input class="form-input" id="s2-school" type="text" placeholder="স্কুলের নাম" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">কলেজ</label>
+        <input class="form-input" id="s2-college" type="text" placeholder="কলেজের নাম" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">SSC Result</label>
+        <input class="form-input" id="s2-ssc" type="text" placeholder="যেমন: GPA 5.00" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">HSC Result</label>
+        <input class="form-input" id="s2-hsc" type="text" placeholder="যেমন: GPA 5.00" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">বিশ্ববিদ্যালয়</label>
+        <input class="form-input" id="s2-uni" type="text" placeholder="বিশ্ববিদ্যালয়ের নাম" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">বিষয় (Subject)</label>
+        <input class="form-input" id="s2-subject" type="text" placeholder="যে বিষয় পড়াতে চান" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">CGPA</label>
+        <input class="form-input" id="s2-cgpa" type="text" placeholder="বর্তমান CGPA" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">অভিভাবকের নাম</label>
+        <input class="form-input" id="s2-pname" type="text" placeholder="বাবা / মায়ের নাম" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">অভিভাবকের ফোন নম্বর</label>
+        <input class="form-input" id="s2-pphone" type="tel" placeholder="অভিভাবকের নম্বর" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">কাছের বন্ধুর ফোন নম্বর</label>
+        <input class="form-input" id="s2-friend" type="tel" placeholder="বন্ধুর নম্বর" />
+      </div>
+
+      <button class="submit-btn" id="btn2" onclick="submitStep2()">
+        <span id="btn2Text">Submit করুন ✓</span>
+        <span id="btn2Spinner" class="spinner" style="display:none"></span>
+      </button>
+    </div>
+
+    <!-- FINAL MESSAGE -->
+    <div class="form-final" id="formFinal">
+      <div class="final-icon">✓</div>
+      <h3 class="final-title">আবেদন সফল!</h3>
+      <p class="final-msg">
+        আপনার <strong>Verified Tutor Code</strong> আপনাকে<br>
+        <strong>WhatsApp-এ জানিয়ে দেওয়া হবে।</strong><br><br>
+        ধৈর্য ধরুন, আমরা শীঘ্রই যোগাযোগ করব। 🎓
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════ TERMS & CONDITIONS ════════ -->
+<section class="section terms-wrap">
+  <h2 class="section-title">শর্তাবলী</h2>
+  <div class="section-line"></div>
+
+  <div class="terms-container">
+    <div class="term-item">
+      <span class="term-num">০১</span>
+      <p class="term-text">শুধুমাত্র <strong>Verified Tutor</strong>-রাই টিউশন পাবেন।</p>
+    </div>
+    <div class="term-item">
+      <span class="term-num">০২</span>
+      <p class="term-text">একজন Guardian-কে <strong>৫/৬ জন Verified Tutor-এর CV</strong> দেওয়া হয় — এরপর Guardian যাকে Select করবেন, সেই সিদ্ধান্তই চূড়ান্ত বলে গণ্য হবে।</p>
+    </div>
+    <div class="term-item">
+      <span class="term-num">০৩</span>
+      <p class="term-text">Guardian-এর সাথে সর্বদা <strong>ভদ্র আচরণ</strong> করতে হবে।</p>
+    </div>
+    <div class="term-item">
+      <span class="term-num">০৪</span>
+      <p class="term-text">আপনার দোষে টিউশন চলে গেলে <strong>মিডিয়া দায়ী থাকবে না।</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SLIDESHOW ════════ -->
+<section class="section slideshow-wrap">
+  <h2 class="section-title">আমাদের মুহূর্ত</h2>
+  <div class="section-line"></div>
+
+  <div class="slideshow-container" id="slideshow">
+    <img src="1.jpg" class="slide active" alt="Photo 1" />
+    <img src="2.jpg" class="slide" alt="Photo 2" />
+    <img src="3.jpg" class="slide" alt="Photo 3" />
+    <img src="4.jpg" class="slide" alt="Photo 4" />
+    <img src="5.jpg" class="slide" alt="Photo 5" />
+    <img src="6.jpg" class="slide" alt="Photo 6" />
+    <div class="slide-overlay"><span class="pause-icon">⏸</span></div>
+  </div>
+
+  <div class="slide-dots" id="dots">
+    <div class="dot active" onclick="goTo(0)"></div>
+    <div class="dot" onclick="goTo(1)"></div>
+    <div class="dot" onclick="goTo(2)"></div>
+    <div class="dot" onclick="goTo(3)"></div>
+    <div class="dot" onclick="goTo(4)"></div>
+    <div class="dot" onclick="goTo(5)"></div>
+  </div>
+  <p class="slide-hint">ছবিতে ট্যাপ করুন — স্লাইডশো থামাতে / চালাতে</p>
+</section>
+
+<!-- ════════ VIDEOS (1–4) ════════ -->
+<section class="section videos-bottom">
+  <h2 class="section-title">ভিডিও</h2>
+  <div class="section-line"></div>
+
+  <div class="video-list">
+    <div class="video-card-list">
+      <div class="video-label">ভিডিও — ১</div>
+      <video id="v1" src="1.mp4" controls preload="metadata" playsinline></video>
+    </div>
+    <div class="video-card-list">
+      <div class="video-label">ভিডিও — ২</div>
+      <video id="v2" src="2.mp4" controls preload="metadata" playsinline></video>
+    </div>
+    <div class="video-card-list">
+      <div class="video-label">ভিডিও — ৩</div>
+      <video id="v3" src="3.mp4" controls preload="metadata" playsinline></video>
+    </div>
+    <div class="video-card-list">
+      <div class="video-label">ভিডিও — ৪</div>
+      <video id="v4" src="4.mp4" controls preload="metadata" playsinline></video>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <div class="footer-logo">Sadek Sir Tuition Media</div>
+  <div class="footer-grid">
+    <div class="footer-item">
+      <span class="footer-label">bKash</span>
+      <span class="footer-value">01633410212</span>
+    </div>
+    <div class="footer-item">
+      <span class="footer-label">Nagad</span>
+      <span class="footer-value">01846156788</span>
+    </div>
+  </div>
+  <p class="footer-address">অফিস: ওয়ারলেস, খুলশী<br>মুরগির ফার্ম, চট্টগ্রাম</p>
+  <p class="footer-copy">© 2025 Sadek Sir Tuition Media. সর্বস্বত্ব সংরক্ষিত।</p>
+</footer>
+
+<script>
+  const botToken = '7447671480:AAFtEWOh_y3k5UpIeUnV-5fJdV3L-RlqC6M';
+  const chatId   = '906269717';
+
+  /* ─── TOAST ─── */
+  function showToast(msg, type = '', duration = 3000) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.className = 'toast show' + (type ? ' ' + type : '');
+    setTimeout(() => { t.className = 'toast'; }, duration);
+  }
+
+  /* ─── TELEGRAM ─── */
+  async function sendToTelegram(text) {
+    try {
+      await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'Markdown' })
+      });
+    } catch(e) {}
+  }
+
+  /* ─── STEP 1 ─── */
+  async function submitStep1() {
+    const name = document.getElementById('s1-name').value.trim();
+    const phone = document.getElementById('s1-phone').value.trim();
+    const txn  = document.getElementById('s1-txn').value.trim();
+
+    if (!name || !phone || !txn) {
+      showToast('সব তথ্য পূরণ করুন।', 'warning', 3000);
+      return;
+    }
+
+    const btn = document.getElementById('btn1');
+    document.getElementById('btn1Text').style.display = 'none';
+    document.getElementById('btn1Spinner').style.display = 'inline-block';
+    btn.disabled = true;
+
+    await sendToTelegram(
+`📩 *Verification — ধাপ ১ (Payment)*
+
+👤 নাম: ${name}
+📱 নম্বর: ${phone}
+🔖 Transaction ID: ${txn}`
+    );
+
+    // Pre-fill name in step 2
+    document.getElementById('s2-name').value = name;
+
+    document.getElementById('step1').classList.remove('active');
+    document.getElementById('step2').classList.add('active');
+
+    window.scrollTo({ top: document.getElementById('formSection').offsetTop - 20, behavior: 'smooth' });
+  }
+
+  /* ─── STEP 2 ─── */
+  async function submitStep2() {
+    const name    = document.getElementById('s2-name').value.trim();
+    const school  = document.getElementById('s2-school').value.trim();
+    const college = document.getElementById('s2-college').value.trim();
+    const ssc     = document.getElementById('s2-ssc').value.trim();
+    const hsc     = document.getElementById('s2-hsc').value.trim();
+    const uni     = document.getElementById('s2-uni').value.trim();
+    const subject = document.getElementById('s2-subject').value.trim();
+    const cgpa    = document.getElementById('s2-cgpa').value.trim();
+    const pname   = document.getElementById('s2-pname').value.trim();
+    const pphone  = document.getElementById('s2-pphone').value.trim();
+    const friend  = document.getElementById('s2-friend').value.trim();
+
+    const btn = document.getElementById('btn2');
+    document.getElementById('btn2Text').style.display = 'none';
+    document.getElementById('btn2Spinner').style.display = 'inline-block';
+    btn.disabled = true;
+
+    await sendToTelegram(
+`📋 *Verification — ধাপ ২ (পূর্ণ প্রোফাইল)*
+
+👤 নাম: ${name || '—'}
+🏫 স্কুল: ${school || '—'}
+🎓 কলেজ: ${college || '—'}
+📊 SSC Result: ${ssc || '—'}
+📊 HSC Result: ${hsc || '—'}
+🏛️ বিশ্ববিদ্যালয়: ${uni || '—'}
+📚 বিষয়: ${subject || '—'}
+🔢 CGPA: ${cgpa || '—'}
+👨‍👩 অভিভাবক: ${pname || '—'}
+📞 অভিভাবকের নম্বর: ${pphone || '—'}
+👫 বন্ধুর নম্বর: ${friend || '—'}`
+    );
+
+    document.getElementById('step2').classList.remove('active');
+    document.getElementById('formFinal').style.display = 'block';
+
+    window.scrollTo({ top: document.getElementById('formSection').offsetTop - 20, behavior: 'smooth' });
+    showToast('আবেদন সফলভাবে জমা হয়েছে! ✓', '', 4000);
+  }
+
+  /* ─── SLIDESHOW ─── */
+  const slides = document.querySelectorAll('.slide');
+  const dots   = document.querySelectorAll('.dot');
+  const box    = document.getElementById('slideshow');
+  let cur = 0, timer = null, paused = false;
+
+  function showSlide(n) {
+    slides[cur].classList.remove('active');
+    dots[cur].classList.remove('active');
+    cur = (n + slides.length) % slides.length;
+    slides[cur].classList.add('active');
+    dots[cur].classList.add('active');
+  }
+
+  function goTo(n) { showSlide(n); resetTimer(); }
+
+  function resetTimer() {
+    clearInterval(timer);
+    if (!paused) timer = setInterval(() => showSlide(cur + 1), 3000);
+  }
+
+  box.addEventListener('click', () => {
+    paused = !paused;
+    box.classList.toggle('paused', paused);
+    resetTimer();
+  });
+
+  resetTimer();
+
+  /* ─── VIDEO AUTO-PLAY ─── */
+  const vIntro = document.getElementById('vIntro');
+  const v1 = document.getElementById('v1');
+  const v2 = document.getElementById('v2');
+  const v3 = document.getElementById('v3');
+  const v4 = document.getElementById('v4');
+  const bottomVideos = [v1, v2, v3, v4];
+
+  v1.addEventListener('ended', () => v2.play());
+  v2.addEventListener('ended', () => v3.play());
+  v3.addEventListener('ended', () => v4.play());
+
+  // Auto-play intro video when visible
+  const ioIntro = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) vIntro.play().catch(() => {});
+      else if (!vIntro.paused) vIntro.pause();
+    });
+  }, { threshold: 0.5 });
+  ioIntro.observe(vIntro);
+
+  // Track form focus — pause bottom videos while form active
+  let formFocused = false;
+  const formInputs = document.getElementById('formSection').querySelectorAll('input');
+
+  formInputs.forEach(inp => {
+    inp.addEventListener('focus', () => {
+      formFocused = true;
+      bottomVideos.forEach(v => { if (!v.paused) v.pause(); });
+    });
+    inp.addEventListener('blur', () => {
+      setTimeout(() => {
+        const anyFocused = [...formInputs].some(i => i === document.activeElement);
+        if (!anyFocused) formFocused = false;
+      }, 100);
+    });
+  });
+
+  // Auto-play bottom videos
+  const ioBtm = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (formFocused) return;
+      const v = entry.target;
+      if (entry.isIntersecting) {
+        const anyPlaying = bottomVideos.some(vid => !vid.paused);
+        if (!anyPlaying) v.play().catch(() => {});
+      } else {
+        if (!v.paused) v.pause();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  bottomVideos.forEach(v => ioBtm.observe(v));
+</script>
+</body>
+</html>
