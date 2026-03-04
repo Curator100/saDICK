@@ -97,19 +97,20 @@
     /* ─── SCROLL CTA ─── */
     .scroll-cta {
       margin-top: 28px;
-      font-size: clamp(1.05rem, 4vw, 1.35rem);
+      font-size: clamp(1.25rem, 5vw, 1.65rem);
       font-weight: 700;
-      color: var(--gold-light);
+      color: #ff4444;
       letter-spacing: 0.02em;
       text-align: center;
       animation: pulse 2s ease-in-out infinite, fadeUp 1s 0.45s ease both;
-      text-shadow: 0 0 18px rgba(232,204,122,0.35);
-      max-width: 360px;
+      text-shadow: 0 0 20px rgba(255, 60, 60, 0.45);
+      max-width: 400px;
+      line-height: 1.4;
     }
 
     @keyframes pulse {
       0%, 100% { opacity: 1; transform: translateY(0); }
-      50%       { opacity: 0.7; transform: translateY(4px); }
+      50%       { opacity: 0.75; transform: translateY(5px); }
     }
 
     /* ─── BUTTONS ─── */
@@ -161,30 +162,6 @@
     .btn-primary:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 28px rgba(201,168,76,0.42);
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 1.5px solid var(--gold);
-      color: var(--gold-light);
-    }
-
-    .btn-outline:hover {
-      background: rgba(201,168,76,0.08);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 18px rgba(201,168,76,0.18);
-    }
-
-    .btn-ghost {
-      background: var(--bg3);
-      border: 1.5px solid var(--border);
-      color: var(--text);
-    }
-
-    .btn-ghost:hover {
-      border-color: var(--gold);
-      color: var(--gold-light);
-      transform: translateY(-2px);
     }
 
     /* ─── SECTION TITLE ─── */
@@ -254,9 +231,7 @@
       transition: opacity 0.25s;
     }
 
-    .slideshow-container.paused .slide-overlay {
-      opacity: 1;
-    }
+    .slideshow-container.paused .slide-overlay { opacity: 1; }
 
     .pause-icon {
       font-size: 2.8rem;
@@ -280,10 +255,7 @@
       cursor: pointer;
     }
 
-    .dot.active {
-      background: var(--gold);
-      transform: scale(1.25);
-    }
+    .dot.active { background: var(--gold); transform: scale(1.25); }
 
     .slide-hint {
       text-align: center;
@@ -313,9 +285,7 @@
       transition: box-shadow 0.2s;
     }
 
-    .video-card:hover {
-      box-shadow: 0 6px 32px rgba(201,168,76,0.12);
-    }
+    .video-card:hover { box-shadow: 0 6px 32px rgba(201,168,76,0.12); }
 
     .video-label {
       padding: 10px 16px;
@@ -380,10 +350,7 @@
       line-height: 1.7;
     }
 
-    .term-text strong {
-      color: var(--gold-light);
-      font-weight: 600;
-    }
+    .term-text strong { color: var(--gold-light); font-weight: 600; }
 
     /* ─── FORM ─── */
     .form-wrap {
@@ -490,11 +457,7 @@
       box-shadow: 0 8px 32px rgba(0,0,0,0.5);
     }
 
-    .toast.show {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
-    }
-
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
     .toast.warning { border-color: #e07b39; color: #f5a668; }
 
     /* Success state */
@@ -605,11 +568,11 @@
       to   { opacity: 1; }
     }
 
-    /* ─── MOBILE FINE-TUNE ─── */
+    /* ─── MOBILE ─── */
     @media (max-width: 480px) {
       .hero { padding: 50px 16px 44px; }
       .section { padding: 48px 16px; }
-      .btn { font-size: 0.97rem; padding: 15px 20px; }
+      .scroll-cta { font-size: clamp(1.15rem, 5vw, 1.45rem); }
     }
   </style>
 </head>
@@ -678,7 +641,6 @@
   <h2 class="section-title">Tuition-এ Apply করুন</h2>
   <div class="section-line"></div>
 
-  <!-- Toast message -->
   <div class="toast" id="toast"></div>
 
   <div class="form-card" id="formCard">
@@ -725,7 +687,6 @@
     </button>
   </div>
 
-  <!-- Success state -->
   <div class="form-success" id="formSuccess" style="display:none">
     <div class="success-icon">✓</div>
     <h3 class="success-title">ধন্যবাদ!</h3>
@@ -813,7 +774,7 @@
 
   function resetTimer() {
     clearInterval(timer);
-    if (!paused) timer = setInterval(() => showSlide(cur + 1), 3000);
+    if (!paused) timer = setInterval(() => showSlide(cur + 1), 2500);
   }
 
   box.addEventListener('click', () => {
@@ -833,11 +794,9 @@
   const group1 = [v1, v2];
   const group2 = [v3, v4];
 
-  // Chain within groups
   v1.addEventListener('ended', () => v2.play());
   v3.addEventListener('ended', () => v4.play());
 
-  // Track if form is focused
   let formFocused = false;
   const formSection = document.getElementById('applyForm');
   const formInputs = formSection.querySelectorAll('input');
@@ -848,7 +807,6 @@
       allVideos.forEach(v => { if (!v.paused) v.pause(); });
     });
     inp.addEventListener('blur', () => {
-      // slight delay to check if another input was focused
       setTimeout(() => {
         const anyFocused = [...formInputs].some(i => i === document.activeElement);
         if (!anyFocused) formFocused = false;
@@ -856,7 +814,6 @@
     });
   });
 
-  // Intersection Observer for auto-play
   const ioOptions = { threshold: 0.5 };
 
   const io1 = new IntersectionObserver((entries) => {
@@ -922,15 +879,15 @@
   }
 
   async function handleSubmit() {
-    const name    = document.getElementById('f-name').value.trim();
-    const phone   = document.getElementById('f-phone').value.trim();
-    const school  = document.getElementById('f-school').value.trim();
-    const ssc     = document.getElementById('f-ssc').value.trim();
-    const college = document.getElementById('f-college').value.trim();
-    const hsc     = document.getElementById('f-hsc').value.trim();
+    const name      = document.getElementById('f-name').value.trim();
+    const phone     = document.getElementById('f-phone').value.trim();
+    const school    = document.getElementById('f-school').value.trim();
+    const ssc       = document.getElementById('f-ssc').value.trim();
+    const college   = document.getElementById('f-college').value.trim();
+    const hsc       = document.getElementById('f-hsc').value.trim();
     const institute = document.getElementById('f-institute').value.trim();
-    const subject = document.getElementById('f-subject').value.trim();
-    const code    = document.getElementById('f-code').value.trim();
+    const subject   = document.getElementById('f-subject').value.trim();
+    const code      = document.getElementById('f-code').value.trim();
 
     if (!name || !phone) {
       showToast('নাম ও WhatsApp নম্বর দিন।', 'warning', 3000);
@@ -944,22 +901,18 @@
 
     const data = { name, phone, school, ssc, college, hsc, institute, subject, code };
 
-    // Always send to Telegram
     try { await sendToTelegram(data); } catch(e) {}
 
     const isVerified = code.startsWith('91');
 
     if (isVerified) {
-      // Show success
       document.getElementById('formCard').style.display = 'none';
       document.getElementById('formSuccess').style.display = 'block';
       showToast('ধন্যবাদ! আপনার আবেদন পাঠানো হয়েছে।', '', 4000);
     } else {
-      // Show warning then redirect
       btn.disabled = false;
       document.getElementById('btnText').style.display = 'inline';
       document.getElementById('btnSpinner').style.display = 'none';
-
       showToast('আমরা শুধুমাত্র Verified Tutor-দের টিউশন দিয়ে থাকি।', 'warning', 5000);
       setTimeout(() => { window.location.href = 'verified.html'; }, 3000);
     }
