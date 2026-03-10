@@ -167,7 +167,7 @@
     .yt-shorts-wrap {
       position: relative;
       width: 100%;
-      padding-bottom: 177.78%; /* 9:16 aspect ratio for Shorts */
+      padding-bottom: 177.78%;
       background: #000;
     }
 
@@ -179,56 +179,134 @@
       border: none;
     }
 
-    /* ─── VERIFICATION IMPORTANCE ─── */
-    .verify-why {
-      max-width: 400px;
-      margin: 28px auto 0;
+    /* ─── FAQ SECTION ─── */
+    .faq-wrap {
+      max-width: 600px;
+      margin: 32px auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .faq-item {
       background: var(--bg3);
       border: 1px solid rgba(201,168,76,0.25);
       border-radius: var(--radius);
       padding: 22px 22px;
     }
 
-    .verify-why-title {
+    .faq-title {
       font-family: 'Playfair Display', serif;
       font-size: 1.05rem;
       color: var(--gold-light);
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       display: flex;
-      align-items: center;
-      gap: 8px;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.5;
     }
 
-    .verify-why-title::before {
-      content: '';
-      display: inline-block;
-      width: 3px;
-      height: 18px;
+    .faq-title .faq-num {
       background: var(--gold);
-      border-radius: 2px;
+      color: #0A0A0F;
+      font-family: 'Hind Siliguri', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 20px;
       flex-shrink: 0;
+      margin-top: 3px;
     }
 
-    .verify-why-list {
+    .faq-body {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    .faq-body p { margin-bottom: 10px; }
+    .faq-body p:last-child { margin-bottom: 0; }
+
+    .faq-body .faq-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 11px;
+      gap: 6px;
+      margin: 8px 0;
+      padding-left: 4px;
     }
 
-    .verify-why-list li {
+    .faq-body .faq-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .faq-body .faq-list li .bullet {
+      color: var(--gold);
+      flex-shrink: 0;
+      font-size: 1rem;
+      margin-top: 1px;
+    }
+
+    .faq-body .step-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 8px 0;
+      padding-left: 0;
+    }
+
+    .faq-body .step-list li {
       display: flex;
       align-items: flex-start;
       gap: 10px;
       font-size: 0.95rem;
       color: var(--text);
-      line-height: 1.6;
     }
 
-    .verify-why-list li .icon {
-      font-size: 1rem;
+    .faq-body .step-list li .step-num {
+      background: var(--gold);
+      color: #0A0A0F;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
       flex-shrink: 0;
       margin-top: 2px;
+    }
+
+    .faq-body .check-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin: 8px 0;
+    }
+
+    .faq-body .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      color: var(--text);
+    }
+
+    .faq-body .check-list li .ck {
+      color: #4caf82;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .faq-divider {
+      width: 100%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 12px 0;
     }
 
     video {
@@ -406,7 +484,6 @@
 
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* Final success */
     .form-final {
       display: none;
       text-align: center;
@@ -443,7 +520,6 @@
 
     .final-msg strong { color: var(--gold-light); }
 
-    /* Toast */
     .toast {
       position: fixed;
       bottom: 28px;
@@ -703,7 +779,6 @@
 </head>
 <body>
 
-<!-- Toast -->
 <div class="toast" id="toast"></div>
 
 <!-- ════════ HERO ════════ -->
@@ -735,49 +810,104 @@
     </div>
   </div>
 
-  <!-- Why Verification Matters -->
-  <div class="verify-why">
-    <p class="verify-why-title">কেন Verification জরুরি?</p>
-    <ul class="verify-why-list">
-      <li>
-        <span class="icon">✅</span>
-        <span>এতে Guardian আপনাকে বিশ্বাস করতে পারবে।</span>
-      </li>
-      <li>
-        <span class="icon">💰</span>
-        <span>কোনো Guardian Salary না দিলে, আমরা তাৎক্ষণিক ব্যবস্থা নিতে পারি।</span>
-      </li>
-      <li>
-        <span class="icon">🕐</span>
-        <span>Salary পাওয়ার পর Media Fee দিতে পারবেন।</span>
-      </li>
-      <li>
-        <span class="icon">🌸</span>
-        <span>মেয়ে Tutor রা নিশ্চিন্তে বাসায় গিয়ে Student পড়াতে পারবেন, কোনো ঝুঁকি থাকে না।</span>
-      </li>
-      <li>
-        <span class="icon">🪪</span>
-        <span>Verified Card পাবেন, এতে High Salary Tuition পাওয়ার সম্ভাবনা বেড়ে যাবে।</span>
-      </li>
-    </ul>
+  <!-- FAQ Section -->
+  <div class="faq-wrap">
 
-    <div style="width:100%;height:1.5px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:22px 0;"></div>
+    <div class="faq-item">
+      <div class="faq-title">
+        <span class="faq-num">১</span>
+        কেন Tutor Verification করা হয়?
+      </div>
+      <div class="faq-body">
+        <p>ঢাকায় প্রতিদিন অনেক টিউশন পোস্ট হয়। কিন্তু অনেক সময় ভুয়া তথ্য দিয়ে কেউ কেউ টিউটর হিসেবে আবেদন করে।</p>
+        <p>এতে দুই ধরনের সমস্যা হয়:</p>
+        <ul class="faq-list">
+          <li><span class="bullet">•</span><span>অভিভাবকরা নিরাপত্তা নিয়ে চিন্তায় থাকেন</span></li>
+          <li><span class="bullet">•</span><span>আসল টিউটররা সুযোগ থেকে বঞ্চিত হন</span></li>
+        </ul>
+        <div class="faq-divider"></div>
+        <p>এই সমস্যা কমানোর জন্য BD Tuition Media Verified Tutor System চালু করেছে।</p>
+        <p>Verification করার মাধ্যমে আমরা নিশ্চিত হই যে:</p>
+        <ul class="check-list">
+          <li><span class="ck">✔</span><span>টিউটরের পরিচয় সঠিক</span></li>
+          <li><span class="ck">✔</span><span>শিক্ষাপ্রতিষ্ঠানের তথ্য সত্য</span></li>
+          <li><span class="ck">✔</span><span>টিউটরটি বিশ্বাসযোগ্য</span></li>
+        </ul>
+        <p style="margin-top:10px;">তাই Verified Tutor দেরই আগে টিউশন দেওয়া হয়।</p>
+      </div>
+    </div>
 
-    <p class="verify-why-title">কীভাবে Verify করবেন?</p>
-    <ul class="verify-why-list">
-      <li>
-        <span class="icon" style="background:var(--gold);color:#0A0A0F;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;">১</span>
-        <span>নিচের নম্বরে ২০০ টাকা bKash / Nagad এ Send Money করুন।</span>
-      </li>
-      <li>
-        <span class="icon" style="background:var(--gold);color:#0A0A0F;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;">২</span>
-        <span>এরপর নিচের Form টি Fill Up করুন।</span>
-      </li>
-      <li>
-        <span class="icon" style="background:var(--gold);color:#0A0A0F;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;">৩</span>
-        <span>আমাদের একজন প্রতিনিধি আপনাকে Verify করে, Verified Card প্রদান করবে।</span>
-      </li>
-    </ul>
+    <div class="faq-item">
+      <div class="faq-title">
+        <span class="faq-num">২</span>
+        কীভাবে Verification করবেন?
+      </div>
+      <div class="faq-body">
+        <p>Verification করা খুব সহজ।</p>
+        <p>ধাপগুলো হলো:</p>
+        <ul class="step-list">
+          <li><span class="step-num">১</span><span>আপনার নাম, মোবাইল নম্বর এবং শিক্ষাপ্রতিষ্ঠানের তথ্য দিন</span></li>
+          <li><span class="step-num">২</span><span>Student ID / NID / প্রয়োজনীয় তথ্য সাবমিট করুন</span></li>
+          <li><span class="step-num">৩</span><span>Verification Charge ২০০ টাকা (bKash / Nagad / Rocket) এর মাধ্যমে পরিশোধ করুন</span></li>
+          <li><span class="step-num">৪</span><span>আমাদের টিম তথ্য যাচাই করবে</span></li>
+        </ul>
+        <p style="margin-top:10px;">সাধারণত ২৪–৪৮ ঘণ্টার মধ্যে Verification সম্পন্ন হয়।</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-title">
+        <span class="faq-num">৩</span>
+        Verification করলে কী সুবিধা পাবেন?
+      </div>
+      <div class="faq-body">
+        <p>Verification করার পর আপনি পাবেন:</p>
+        <ul class="check-list">
+          <li><span class="ck">✔</span><span>Verified Tutor Badge</span></li>
+          <li><span class="ck">✔</span><span>Verified Tutor Digital Card</span></li>
+          <li><span class="ck">✔</span><span>টিউশন পাওয়ার ক্ষেত্রে অগ্রাধিকার</span></li>
+          <li><span class="ck">✔</span><span>অনেক ক্ষেত্রে Salary পাওয়ার পর Media Fee দেওয়ার সুযোগ</span></li>
+        </ul>
+        <p style="margin-top:10px;">Verified Tutor দের সাধারণত দ্রুত টিউশন পাওয়ার সম্ভাবনা বেশি থাকে।</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-title">
+        <span class="faq-num">৪</span>
+        Verification করতে ২০০ টাকা কেন লাগে?
+      </div>
+      <div class="faq-body">
+        <p>Verification করার সময় আমাদের টিমকে প্রতিটি টিউটরের তথ্য আলাদাভাবে যাচাই করতে হয়।</p>
+        <p>এর মধ্যে থাকে:</p>
+        <ul class="faq-list">
+          <li><span class="bullet">•</span><span>দেওয়া তথ্য মিলিয়ে দেখা</span></li>
+          <li><span class="bullet">•</span><span>শিক্ষাপ্রতিষ্ঠানের তথ্য যাচাই</span></li>
+          <li><span class="bullet">•</span><span>ডাটাবেসে রেকর্ড সংরক্ষণ</span></li>
+        </ul>
+        <div class="faq-divider"></div>
+        <p>এই যাচাই প্রক্রিয়া পরিচালনার জন্য ২০০ টাকা Verification Charge নেওয়া হয়।</p>
+        <p style="margin-top:8px;">এটি নিশ্চিত করে যে শুধু সত্যিকারের এবং সিরিয়াস টিউটররাই রেজিস্ট্রেশন করছেন।</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-title">
+        <span class="faq-num">৫</span>
+        Verification না করলে কি টিউশন পাওয়া যাবে?
+      </div>
+      <div class="faq-body">
+        <p>হ্যাঁ, Verification না করলেও টিউশনের জন্য আবেদন করা যাবে।</p>
+        <p>তবে কিছু ক্ষেত্রে:</p>
+        <ul class="faq-list">
+          <li><span class="bullet">•</span><span>Verified Tutor দের অগ্রাধিকার দেওয়া হয়</span></li>
+          <li><span class="bullet">•</span><span>কিছু টিউশনে Verified Tutor চাওয়া হয়</span></li>
+          <li><span class="bullet">•</span><span>Media Fee আগে দিতে হবে</span></li>
+        </ul>
+        <p style="margin-top:10px;">তাই দ্রুত এবং সহজভাবে টিউশন পেতে চাইলে Verification করা ভালো।</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -809,7 +939,6 @@
 
   <div class="form-container">
 
-    <!-- STEP 1: Payment verification -->
     <div class="form-step active" id="step1">
       <div class="step-badge">ধাপ ১ — Payment যাচাই</div>
 
@@ -832,7 +961,6 @@
       </button>
     </div>
 
-    <!-- STEP 2: Full profile -->
     <div class="form-step" id="step2">
       <div class="step-badge">ধাপ ২ — আপনার তথ্য</div>
 
@@ -887,7 +1015,6 @@
       </button>
     </div>
 
-    <!-- FINAL MESSAGE -->
     <div class="form-final" id="formFinal">
       <div class="final-icon">✓</div>
       <h3 class="final-title">আবেদন সফল!</h3>
@@ -960,11 +1087,27 @@
   <div class="video-list">
     <div class="video-card-list">
       <div class="video-label">ভিডিও — ১</div>
-      <video id="v1" src="1.mp4" controls preload="metadata" playsinline></video>
+      <div style="position:relative;width:100%;padding-bottom:177.78%;background:#000;">
+        <iframe
+          src="https://www.youtube.com/embed/5DE0-8fmHB8"
+          title="ভিডিও ১"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          style="position:absolute;inset:0;width:100%;height:100%;border:none;">
+        </iframe>
+      </div>
     </div>
     <div class="video-card-list">
       <div class="video-label">ভিডিও — ২</div>
-      <video id="v2" src="2.mp4" controls preload="metadata" playsinline></video>
+      <div style="position:relative;width:100%;padding-bottom:177.78%;background:#000;">
+        <iframe
+          src="https://www.youtube.com/embed/RS2xaUfvOR0"
+          title="ভিডিও ২"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          style="position:absolute;inset:0;width:100%;height:100%;border:none;">
+        </iframe>
+      </div>
     </div>
     <div class="video-card-list">
       <div class="video-label">ভিডিও — ৩</div>
@@ -998,7 +1141,6 @@
   const botToken = '7447671480:AAFtEWOh_y3k5UpIeUnV-5fJdV3L-RlqC6M';
   const chatId   = '906269717';
 
-  /* ─── TOAST ─── */
   function showToast(msg, type = '', duration = 3000) {
     const t = document.getElementById('toast');
     t.textContent = msg;
@@ -1006,7 +1148,6 @@
     setTimeout(() => { t.className = 'toast'; }, duration);
   }
 
-  /* ─── TELEGRAM ─── */
   async function sendToTelegram(text) {
     try {
       await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
@@ -1017,7 +1158,6 @@
     } catch(e) {}
   }
 
-  /* ─── STEP 1 ─── */
   async function submitStep1() {
     const name = document.getElementById('s1-name').value.trim();
     const phone = document.getElementById('s1-phone').value.trim();
@@ -1041,16 +1181,12 @@
 🔖 Transaction ID: ${txn}`
     );
 
-    // Pre-fill name in step 2
     document.getElementById('s2-name').value = name;
-
     document.getElementById('step1').classList.remove('active');
     document.getElementById('step2').classList.add('active');
-
     window.scrollTo({ top: document.getElementById('formSection').offsetTop - 20, behavior: 'smooth' });
   }
 
-  /* ─── STEP 2 ─── */
   async function submitStep2() {
     const name    = document.getElementById('s2-name').value.trim();
     const school  = document.getElementById('s2-school').value.trim();
@@ -1087,7 +1223,6 @@
 
     document.getElementById('step2').classList.remove('active');
     document.getElementById('formFinal').style.display = 'block';
-
     window.scrollTo({ top: document.getElementById('formSection').offsetTop - 20, behavior: 'smooth' });
     showToast('আবেদন সফলভাবে জমা হয়েছে! ✓', '', 4000);
   }
@@ -1122,17 +1257,12 @@
   resetTimer();
 
   /* ─── VIDEO AUTO-PLAY ─── */
-  const v1 = document.getElementById('v1');
-  const v2 = document.getElementById('v2');
   const v3 = document.getElementById('v3');
   const v4 = document.getElementById('v4');
-  const bottomVideos = [v1, v2, v3, v4];
+  const bottomVideos = [v3, v4];
 
-  v1.addEventListener('ended', () => v2.play());
-  v2.addEventListener('ended', () => v3.play());
   v3.addEventListener('ended', () => v4.play());
 
-  // Track form focus — pause bottom videos while form active
   let formFocused = false;
   const formInputs = document.getElementById('formSection').querySelectorAll('input');
 
@@ -1149,7 +1279,6 @@
     });
   });
 
-  // Auto-play bottom videos
   const ioBtm = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (formFocused) return;
